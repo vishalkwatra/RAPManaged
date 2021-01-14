@@ -1,0 +1,57 @@
+@Metadata.layer: #CORE
+
+@UI:{
+        headerInfo:{
+
+        typeName: 'Sale Document',
+        typeNamePlural: 'Sale Documents',
+        title: { value: 'sales_doc_num' },
+        description: { value: 'date_created' }
+     }
+
+
+     }
+
+annotate view ZVK_I_Sales_Header_M_02 with
+{
+
+  @UI.facet: [
+
+         {
+         id:'SHeadM_02',
+         purpose: #STANDARD,
+         type: #LINEITEM_REFERENCE,
+         label: 'Sales Order Item',
+         position: 10,
+         targetElement: '_SItemM_02' }
+
+         ]
+
+  @UI:{ lineItem: [{  position: 10, label: 'Number', importance: #HIGH, targetElement: '_SItemM_02.sales_doc_num'}]}
+  sales_doc_num;
+
+  @UI:{ lineItem: [{  position: 20, label: 'Data Created', importance: #HIGH }]}
+  date_created;
+
+  @UI:{ lineItem: [{  position: 30, label: 'Create By', importance: #HIGH }]}
+  person_created;
+
+  @UI:{ lineItem: [{  position: 40, label: 'Total', importance: #HIGH }]}
+  total_cost;
+
+
+
+  @UI:{ lineItem: [{  position: 50, label: 'Block Status', importance: #HIGH }]}
+  block_status;
+
+
+  @UI:{ lineItem: [{  position: 70, label: 'Sales Org', importance: #MEDIUM }]}
+  sales_org;
+
+  @UI:{ lineItem: [{  position: 80, label: 'Sales Dist', importance: #MEDIUM }]}
+  sales_dist;
+
+  @UI:{ lineItem: [{  position: 90, label: 'Sales Div', importance: #MEDIUM }]}
+  sales_div;
+
+}

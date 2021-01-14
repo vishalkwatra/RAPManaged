@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Definition for sales head'
+define service ZVK_SD_SALES_02 {
+  expose ZVK_I_Sales_Header_M_02;
+  expose ZVK_I_Sales_Item_M_02;
+}
